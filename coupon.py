@@ -8,6 +8,7 @@ import datetime
 import sys
 import re
 import random
+import os
 import threading
 import warnings
 warnings.filterwarnings("ignore")
@@ -29,6 +30,10 @@ class Coupon:
         self.rc = RClient(rk_um, rk_pw)
         self.times=0
         self.ck=''
+        if os.path.isdir('C:\Temp'):
+            pass
+        else:
+            os.mkdir('C:\Temp')
     def login(self):
         rdname = str(random.randint(1000000, 10000000))
         driver = webdriver.PhantomJS()

@@ -1,6 +1,9 @@
 import csv
 def loadCSVfile(file):
-    csv_reader = csv.reader(open(file))
+    try:
+        csv_reader = csv.reader(open(file))
+    except:
+        raise Exception('请确认Cookies.csv文件存在！如不存在请复制JDPackage中的Cookies.csv到程序文件目录中！')
     return csv_reader
 def spider_file_csv(lc_dict,filename):
     try:
