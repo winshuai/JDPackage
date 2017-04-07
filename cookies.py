@@ -1,9 +1,7 @@
 #encoding=utf-8
-import requests
+
 import time
-import re
 from selenium.webdriver.common.keys import Keys
-import sys
 import csv
 from Tkinter import *
 from PIL import ImageTk
