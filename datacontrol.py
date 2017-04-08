@@ -1,3 +1,4 @@
+#encoding=utf-8
 import csv
 def loadCSVfile(file):
     try:
