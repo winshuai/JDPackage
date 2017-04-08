@@ -1,4 +1,4 @@
-Docs For ROOKIE
+﻿Docs For ROOKIE
 ===============
 
 
@@ -47,7 +47,7 @@ Docs For ROOKIE
 
 hello.py
 
-    from JDPackage import *
+    #encoding=utf-8    from JDPackage import *
 
     login('1','15840000000','123456') #登陆京东账号，设定userid为1，并将cookies存入cookies文件(注意：登录只需要一次，除非cookies失效)
 
