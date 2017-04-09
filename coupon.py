@@ -83,7 +83,7 @@ class Coupon:
                         enabled = 1
         driver.quit()
     def new_coupon(self,url_coupon,timex,endtime):
-        url_filter='https://coupon.m.jd.com/coupons/show.action?key='+re.findall('key=(.*?)&',url_coupon,re.S)[0]+'&roleId='+re.findall('roleId=(.*?)&',url_coupon,re.S)[0]+'&to=m.jd.com'
+        url_filter='http://coupon.m.jd.com/coupons/show.action?key='+re.findall('key=(.*?)&',url_coupon,re.S)[0]+'&roleId='+re.findall('roleId=(.*?)&',url_coupon,re.S)[0]+'&to=m.jd.com'
         url_filter=str(url_filter)
         print url_filter
         timex = datetime.datetime.strptime(timex, '%Y-%m-%d %H:%M:%S')
