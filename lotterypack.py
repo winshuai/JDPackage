@@ -17,9 +17,14 @@ def lottery_time(userid, code, timet, delay, cookielist, proxylist=[]):
     cookiedt = []
     msglist = []
     ps = 0
+    print 'Verify Time:',timet
     for each in cookielist:
-        if str(each[0]) == str(userid):
-            cookiedt.append(each[1])
+        try:
+            if str(each[0]) == str(userid):
+                cookiedt.append(each[1])
+                print each[2],'Ready!'
+        except:
+            pass
     proxies = []
 
     if proxylist != []:
@@ -29,6 +34,7 @@ def lottery_time(userid, code, timet, delay, cookielist, proxylist=[]):
     time1 = datetime.datetime.strptime(timet, '%Y-%m-%d %H:%M:%S')
     enabled = 1
     while enabled == 1:
+        time.sleep(0.1)
         if datetime.datetime.now() >= time1:
             for each in cookiedt:
                 ck=1
@@ -174,7 +180,7 @@ def filter_iplist(filename,newfilename,timeout):
     csvfile.close()
 
 if __name__ == "__main__":
-    read_lotteryfile('code.txt')
+    #read_lotteryfile('code.txt')
     '''
     get_iplist('ip.csv', 3, 'inha')  # 参数为（文件名，页数，代理类别）；代理类别包含4种(inha:国内高匿,intr:国内普通,outha:国外高匿,outtr:国外普通
     filter_iplist('ip.csv', 'new.csv', 2)  # 过滤出有效IP并存储为new.csv 参数为（文件名，过滤后的文件名，超时判定秒数）
@@ -184,3 +190,5 @@ if __name__ == "__main__":
     add_lottery('1', '4b6c385f-a626-48d2-8abe-f2ce2ebe5d5f', '2017-03-08 20:57:30', 5, cookielist, proxylist)  # 代理模式
     #add_lottery('1','4b6c385f-a626-48d2-8abe-f2ce2ebe5d5f','2017-03-08 20:57:30',5,cookielist) #无代理模式
     '''
+    cookielist = loadCSVfile('cookies.csv')
+    add_lottery('1', 'b061839a-fa56-48a2-98aa-718700110405', '2017-04-10 10:44:30', 5, cookielist, proxylist=[])
